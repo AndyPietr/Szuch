@@ -3,11 +3,6 @@
 
 #define STD_ORDER_N_LENGTH 23
 
-#define SEC_IN_HOUR 3600
-#define SEC_IN_MIN 60
-#define NUM_OF_SECTIONS 3
-#define PIN_LED_1 21
-#define PIN_BUTTON_1 20
 
 
 
@@ -26,3 +21,10 @@ typedef struct dane{
 
 
 int import(void*);
+int creatingThreads(void*, int);
+void* threadFunction(void* arg);
+long int calculate_sec_to(int, int, int);
+int my_delay(long int); 
+void* N_task(void*);
+void* T_task(void*);
+void* O_task(void*);

@@ -29,7 +29,7 @@ int import(void* arg){
 		//wykrywa rozkazy 'N'	
 		else if(line[i][0] == 'N'){
 			
-			printf("linia %d wykrylem rozkaz N, analizuje...\n", i);
+			printf("linia %d wykrylem rozkaz 'N', analizuje...\n", i);
 				
 			//	sprawdza długość rozkazu 'N'
 			if( STD_ORDER_N_LENGTH != strlen(line[i])){
@@ -60,7 +60,7 @@ int import(void* arg){
 			(pmydata + numerStruktury)->task_sec_OFF	= s2;
 
 
-
+			/*
 
 			//drukuje komunikat na stdout
 			printf("dane wpisane do struktury [%2d] programu, %c %d %d:%d:%d %d:%d:%d\n",numerStruktury,
@@ -72,7 +72,7 @@ int import(void* arg){
 			(pmydata + numerStruktury)->task_hour_OFF,
 			(pmydata + numerStruktury)->task_min_OFF,	
 			(pmydata + numerStruktury)->task_sec_OFF  );
-		
+			*/		
 		//inkrementuje numer Struktury
 			numerStruktury++;
 
@@ -110,7 +110,8 @@ int import(void* arg){
 			(pmydata + numerStruktury)->task_min_OFF		= m2;
 			(pmydata + numerStruktury)->task_sec_OFF		= s2;
 
-		//drukuje komunikat na stdout
+			/*
+			//drukuje komunikat na stdout
 			printf("dane wpisane do struktury[%d] programu, '%c' %d %d:%d:%d %d %d:%d:%d %d\n", 
 			numerStruktury,
 			(pmydata + numerStruktury)->kind_of_order, 
@@ -123,7 +124,7 @@ int import(void* arg){
 			(pmydata + numerStruktury)->task_min_OFF, 
 			(pmydata + numerStruktury)->task_sec_OFF, 
 			(pmydata + numerStruktury)->task_lasting_in_sec );
-
+			*/
 		//inkrementuje numer Struktury
 			numerStruktury++;
 
@@ -155,8 +156,8 @@ int import(void* arg){
 			(pmydata + numerStruktury)->task_min_ON			= m1;
 			(pmydata + numerStruktury)->task_sec_ON			= s1;
 			(pmydata + numerStruktury)->task_lasting_in_sec	= czas_trwania_rozkazu;
-
-		//drukuje komunikat na stdout
+			/*
+			//drukuje komunikat na stdout
 			printf("dane wpisane do struktury[%d] programu, '%c' %d %d:%d:%d %d", 
 			numerStruktury,
 			(pmydata + numerStruktury)->kind_of_order, 
@@ -165,7 +166,7 @@ int import(void* arg){
 			(pmydata + numerStruktury)->task_min_ON,
 			(pmydata + numerStruktury)->task_sec_ON, 
 			(pmydata + numerStruktury)->task_lasting_in_sec );
-
+			*/
 		//inkrementuje numer Struktury
 			numerStruktury++;
 
@@ -177,8 +178,10 @@ int import(void* arg){
 	//zwiększenie licznika linii
 	i++;
 	}	
+
 	
+
 	//zamyka plik	
 	fclose(pf);
-	return 0;
+	return numerStruktury;
 }

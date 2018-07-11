@@ -10,6 +10,7 @@
 int main(int argc, char **argv){
 	
 	MyData mydata[MAX_FILE_LINES];
-	import(mydata);
-
+	int iloscOdczytanychStruktur = import(mydata);
+	creatingThreads(mydata, iloscOdczytanychStruktur);
+	return 0;
 }
